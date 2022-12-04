@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
-import Profile from './components/Profile';
-import Post from './components/new-post';
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Profile from './components/Profile/Profile';
+import NewPost from './components/New-post/New-post';
+import Feed from './components/Feed/Feed';
+
 
 
 function App() {
@@ -13,7 +15,10 @@ function App() {
     <div className='app-wrapper'>
       <Navbar />
       <Profile />
-      <Post />
+      <NewPost />
+    </div>
+    <div className='posts'>
+      <Feed />
     </div>
     </div>
   );
