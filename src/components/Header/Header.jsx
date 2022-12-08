@@ -1,14 +1,13 @@
-import React from 'react';
-import logo from '../../img/logo.png';
-import s from './Header.module.css';
-
+import React from "react";
+import logo from "../../img/logo.png";
+import s from "./Header.module.css";
 
 const Header = () => {
-    return (    
-        <header className={s.header}>
-            <img className={s.logo} src={logo}/>
-        </header>
-    );
-}
+   return (
+      <header className={s.header}>
+         <img className={s.logo} src={logo} />
+      </header>
+   );
+};
 
 export default Header;
