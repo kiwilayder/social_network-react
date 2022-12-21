@@ -30,7 +30,16 @@ function App(props) {
                />
             </Routes>
             <Routes>
-               <Route path="/dialogs/*" element={<Dialogs dialogsData={props.state.dialogsData} />} />
+               <Route
+                  path="/dialogs/*"
+                  element={
+                     <Dialogs
+                        dialogsData={props.state.dialogsData}
+                        updateMessage={props.updateMessage}
+                        sendMessage={props.sendMessage}
+                     />
+                  }
+               />
             </Routes>
          </div>
          <div className="posts">

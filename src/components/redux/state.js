@@ -18,11 +18,8 @@ let state = {
          { id: 3, name: "Leha", avatar: avatarLeha },
       ],
 
-      messages: [
-         { id: 1, message: "YO" },
-         { id: 2, message: "YOO" },
-         { id: 3, message: "YOOO" },
-      ],
+      messages: [{ id: 1, message: "YO" }],
+      newMessage: "",
    },
 
    postData: {
@@ -51,6 +48,22 @@ export let addPost = () => {
 
 export let updateText = (textPost) => {
    state.postData.newPostText = textPost;
+   renderTree(state);
+};
+
+export let sendMessage = () => {
+   let newMessage = {
+      id: 5,
+      message: state.dialogsData.newMessage,
+   };
+
+   state.dialogsData.messages.push(newMessage);
+   state.dialogsData.newMessage = "";
+   renderTree(state);
+};
+
+export let updateMessage = (textMessage) => {
+   state.dialogsData.newMessage = textMessage;
    renderTree(state);
 };
 

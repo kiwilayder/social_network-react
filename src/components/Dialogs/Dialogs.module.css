@@ -1,4 +1,4 @@
-.dialogs {
+.wrapper {
    background: linear-gradient(135deg, rgba(225, 225, 225, 0.1), rgba(225, 225, 225, 0));
    backdrop-filter: blur(10px);
    -webkit-backdrop-filter: blur(10px);
@@ -12,7 +12,7 @@
    height: 65vh;
 }
 
-.container_dialogs {
+.wrapper__dialogs {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -46,33 +46,75 @@
    transition: 0.5s all;
 }
 
-.messages {
-   border-radius: 20px;
-   margin-left: 7px;
-   border: 1px solid rgba(225, 225, 225, 0.18);
-   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+.windowMessages {
    display: flex;
    flex-direction: column;
    justify-content: end;
-   align-items: end;
+   align-items: start;
    width: 100%;
+   padding: 15px;
+   padding-bottom: 0px;
+   gap: 7px;
+   align-items: flex-end;
 }
 
 .message {
-   margin: 10px;
    padding: 10px 20px;
    background: white;
    border-radius: 20px;
    color: black;
-   width: 20%;
-   text-align: center;
 }
 
-.container_dialogs::-webkit-scrollbar {
+.messages__send {
+   font-family: inherit;
+   padding: 7px 35px;
+   color: #fff;
+   border: 2px solid #9418db;
+   border-radius: 15px;
+   background: #9418db;
+   cursor: pointer;
+   transition: 0.5s all;
+}
+
+.messages__send:hover {
+   font-family: inherit;
+   background: #fff;
+   color: #9418db;
+   font-weight: bold;
+   transition: 0.5s all;
+}
+
+.messages__areaMessage {
+   font-family: inherit;
+   color: white;
+   height: 22px;
+   width: 500px;
+
+   background: transparent;
+   border-radius: 20px;
+   border: 2px solid #9418db;
+   outline: none;
+   font-size: 18px;
+   resize: none;
+   padding: 10px 10px;
+   overflow: hidden;
+}
+
+.messages__sendMessage {
+   margin-top: 15px;
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   height: 55px;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.wrapper__dialogs::-webkit-scrollbar {
    width: 5px;
 }
 
-.container_dialogs::-webkit-scrollbar-thumb {
+.wrapper__dialogs::-webkit-scrollbar-thumb {
    background: #9418db;
    border-radius: 50px;
 }
