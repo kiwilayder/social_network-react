@@ -1,7 +1,8 @@
 .feed {
-   margin-top: 5px;
    display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
+   justify-content: start;
+   flex-direction: row-reverse;
+   flex-wrap: wrap-reverse;
    width: 1200px;
+   gap: 10px;
 }

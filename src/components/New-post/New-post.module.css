@@ -42,15 +42,15 @@
 }
 
 .textarea {
-   padding-bottom: 10px;
    color: #fff;
+   height: 30px;
    margin-top: 10px;
-   width: 100%;
+   width: 900px;
    align-self: start;
    background: transparent;
    border: none;
    outline: none;
-   border-bottom: 1px solid #252525;
+   border-bottom: 1px solid #fff;
    font-size: 18px;
 }
 

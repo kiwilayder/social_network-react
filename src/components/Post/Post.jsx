@@ -12,12 +12,7 @@ const Post = (props) => {
                <h1>Kiwi Layder</h1>
             </div>
          </div>
-         <h1 className={s.title}>Lorem, ipsum dolor?</h1>
-         <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aperiam unde, optio dolore quidem
-            eum delectus veritatis ab explicabo nam aspernatur vero eius eligendi consectetur, cupiditate,
-            consequuntur dignissimos fugit culpa.
-         </span>
+         <span className={s.text}>{props.text}</span>
          <div className={s.like}>
             <img className={s.like_img} src={like} alt="logo" />
             <span>{props.likecount}</span>

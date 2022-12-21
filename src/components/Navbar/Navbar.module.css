@@ -25,8 +25,10 @@
 }
 
 .active {
+   border-radius: 20px;
+   padding: 10px 20px;
+   color: #eeeeee;
+   background: #9418db;
    text-decoration: none;
-   font-weight: bold;
-   color: #9418db;
    transition: 0.4s all;
 }

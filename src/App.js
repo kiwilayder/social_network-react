@@ -6,32 +6,39 @@ import Profile from "./components/Profile/Profile";
 import NewPost from "./components/New-post/New-post";
 import Feed from "./components/Feed/Feed";
 import Dialogs from "./components/Dialogs/Dialogs";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-function App() {
+function App(props) {
    return (
-      <BrowserRouter>
-         <div className="main-wrapper">
-            <Header />
-            <div className="app-wrapper">
-               <Navbar />
-               <Routes>
-                  <Route path="/profile" element={<Profile />} />
-               </Routes>
-               <Routes>
-                  <Route path="/profile" element={<NewPost />} />
-               </Routes>
-               <Routes>
-                  <Route path="/dialogs" element={<Dialogs />} />
-               </Routes>
-            </div>
-            <div className="posts">
-               <Routes>
-                  <Route path="/profile" element={<Feed />} />
-               </Routes>
-            </div>
+      <div className="main-wrapper">
+         <Header />
+         <div className="app-wrapper">
+            <Navbar />
+            <Routes>
+               <Route path="/profile" element={<Profile />} />
+            </Routes>
+            <Routes>
+               <Route
+                  path="/profile"
+                  element={
+                     <NewPost
+                        updateText={props.updateText}
+                        newPostText={props.state.postData.newPostText}
+                        addPost={props.addPost}
+                     />
+                  }
+               />
+            </Routes>
+            <Routes>
+               <Route path="/dialogs/*" element={<Dialogs dialogsData={props.state.dialogsData} />} />
+            </Routes>
          </div>
-      </BrowserRouter>
+         <div className="posts">
+            <Routes>
+               <Route path="/profile" element={<Feed postData={props.state.postData} />} />
+            </Routes>
+         </div>
+      </div>
    );
 }
 

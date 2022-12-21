@@ -13,3 +13,7 @@
    display: flex;
    flex-wrap: wrap;
 }
+
+.main-wrapper {
+   min-height: 100vh;
+}

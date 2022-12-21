@@ -11,7 +11,7 @@
    padding: 20px;
    width: 550px;
    height: 280px;
-   margin-bottom: 15px;
+   flex-grow: 1;
 }
 .like_img {
    width: 25px;
@@ -22,6 +22,11 @@
    align-items: end;
    align-self: end;
    height: inherit;
+}
+
+.text {
+   font-size: 18px;
+   margin-top: 20px;
 }
 
 .like span {
