@@ -21,24 +21,14 @@ function App(props) {
                <Route
                   path="/profile"
                   element={
-                     <NewPost
-                        updateText={props.updateText}
-                        newPostText={props.state.postData.newPostText}
-                        addPost={props.addPost}
-                     />
+                     <NewPost dispatch={props.dispatch} newPostText={props.state.postData.newPostText} />
                   }
                />
             </Routes>
             <Routes>
                <Route
                   path="/dialogs/*"
-                  element={
-                     <Dialogs
-                        dialogsData={props.state.dialogsData}
-                        updateMessage={props.updateMessage}
-                        sendMessage={props.sendMessage}
-                     />
-                  }
+                  element={<Dialogs dialogsData={props.state.dialogsData} dispatch={props.dispatch} />}
                />
             </Routes>
          </div>

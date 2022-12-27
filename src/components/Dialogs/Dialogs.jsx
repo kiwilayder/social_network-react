@@ -7,12 +7,11 @@ const Dialogs = (props) => {
    let addNewMessage = React.createRef();
 
    let addMessage = () => {
-      props.sendMessage();
+      props.dispatch({ type: "SEND-MESSAGE" });
    };
 
    let newTextMessage = () => {
-      let newText = addNewMessage.current.value;
-      props.updateMessage(newText);
+      props.dispatch({ type: "UPDATE-MESSAGE", textMessage: addNewMessage.current.value });
    };
 
    let messages = props.dialogsData.messages.map((m) => <Message_item massage={m.message} />);
