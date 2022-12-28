@@ -2,6 +2,11 @@ import avatarLena from "../../img/avatarLena.jpg";
 import avatarRuslan from "../../img/avatarRuslan.jpg";
 import avatarLeha from "../../img/avatarLeha.jpg";
 
+const updateText = "UPDATE-TEXT";
+const addPost = "ADD-POST";
+const updateMessage = "UPDATE-MESSAGE";
+const sendMessage = "SEND-MESSAGE";
+
 let store = {
    _state: {
       dialogsData: {
@@ -73,5 +78,13 @@ let store = {
       }
    },
 };
+
+export const updateTextActionCreator = (text) => ({ type: updateText, textPost: text });
+
+export const addPostActionCreator = () => ({ type: addPost });
+
+export const updateMessageActionCreator = (message) => ({ type: updateMessage, textMessage: message });
+
+export const sendMessageActionCreator = () => ({ type: sendMessage });
 
 export default store;
