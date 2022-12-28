@@ -1,11 +1,8 @@
 import avatarLena from "../../img/avatarLena.jpg";
 import avatarRuslan from "../../img/avatarRuslan.jpg";
 import avatarLeha from "../../img/avatarLeha.jpg";
-
-const updateText = "UPDATE-TEXT";
-const addPost = "ADD-POST";
-const updateMessage = "UPDATE-MESSAGE";
-const sendMessage = "SEND-MESSAGE";
+import postDataReducer from "./PostDataReducer";
+import dialogsDataReducer from "./DialogsDataReducer";
 
 let store = {
    _state: {
@@ -50,41 +47,11 @@ let store = {
    },
 
    dispatch(action) {
-      if (action.type === "ADD-POST") {
-         let newPost = {
-            id: 5,
-            text: this._state.postData.newPostText,
-            likecount: 0,
-         };
+      this._state.postData = postDataReducer(this._state.postData, action);
+      this._state.dialogsData = dialogsDataReducer(this._state.dialogsData, action);
 
-         this._state.postData.post.push(newPost);
-         this._state.postData.newPostText = "";
-         this._renderTree(this._state);
-      } else if (action.type === "UPDATE-TEXT") {
-         this._state.postData.newPostText = action.textPost;
-         this._renderTree(this._state);
-      } else if (action.type === "SEND-MESSAGE") {
-         let newMessage = {
-            id: 5,
-            message: this._state.dialogsData.newMessage,
-         };
-
-         this._state.dialogsData.messages.push(newMessage);
-         this._state.dialogsData.newMessage = "";
-         this._renderTree(this._state);
-      } else if (action.type === "UPDATE-MESSAGE") {
-         this._state.dialogsData.newMessage = action.textMessage;
-         this._renderTree(this._state);
-      }
+      this._renderTree(this._state);
    },
 };
-
-export const updateTextActionCreator = (text) => ({ type: updateText, textPost: text });
-
-export const addPostActionCreator = () => ({ type: addPost });
-
-export const updateMessageActionCreator = (message) => ({ type: updateMessage, textMessage: message });
-
-export const sendMessageActionCreator = () => ({ type: sendMessage });
 
 export default store;

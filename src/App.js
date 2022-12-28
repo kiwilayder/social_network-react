@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
-import NewPost from "./components/New-post/New-post";
+import NewPost from "./components/NewPost/NewPost";
 import Feed from "./components/Feed/Feed";
 import Dialogs from "./components/Dialogs/Dialogs";
 import { Route, Routes } from "react-router-dom";
