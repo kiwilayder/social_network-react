@@ -1,10 +1,22 @@
 const UPDATE_TEXT = "UPDATE_TEXT";
 const ADD_POST = "ADD_POST";
 
-const postDataReducer = (state, action) => {
+let initialState = {
+   post: [
+      {
+         id: 1,
+         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+         likecount: 2,
+      },
+   ],
+   newPostText: "",
+};
+
+const postDataReducer = (state = initialState, action) => {
    switch (action.type) {
       case UPDATE_TEXT:
          state.newPostText = action.textPost;
+
          return state;
 
       case ADD_POST:

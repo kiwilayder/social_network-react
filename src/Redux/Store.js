@@ -1,6 +1,6 @@
-import avatarLena from "../../img/avatarLena.jpg";
-import avatarRuslan from "../../img/avatarRuslan.jpg";
-import avatarLeha from "../../img/avatarLeha.jpg";
+import avatarLena from "../img/avatarLena.jpg";
+import avatarRuslan from "../img/avatarRuslan.jpg";
+import avatarLeha from "../img/avatarLeha.jpg";
 import postDataReducer from "./PostDataReducer";
 import dialogsDataReducer from "./DialogsDataReducer";
 
