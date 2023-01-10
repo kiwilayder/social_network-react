@@ -1,43 +1,27 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header/Header";
-import Navbar from "./components/Navbar/Navbar";
-import Profile from "./components/Profile/Profile";
-import NewPost from "./components/NewPost/NewPost";
 import Feed from "./components/Feed/Feed";
-import Dialogs from "./components/Dialogs/Dialogs";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import ProfilePage from "./components/ProfilePage/ProfilePage";
 
 function App(props) {
+   debugger;
    return (
-      <div className="main-wrapper">
-         <Header />
+      <>
          <div className="app-wrapper">
-            <Navbar />
             <Routes>
-               <Route path="/profile" element={<Profile />} />
-            </Routes>
-            <Routes>
-               <Route
-                  path="/profile"
-                  element={
-                     <NewPost dispatch={props.dispatch} newPostText={props.state.postData.newPostText} />
-                  }
-               />
-            </Routes>
-            <Routes>
-               <Route
-                  path="/dialogs/*"
-                  element={<Dialogs dialogsData={props.state.dialogsData} dispatch={props.dispatch} />}
-               />
+               <Route path="/" element={<Layout />}>
+                  <Route path="profile" element={<ProfilePage store={props.store} />} />
+                  <Route path="dialogs/*" element={<DialogsContainer store={props.store} />} />
+               </Route>
             </Routes>
          </div>
-         <div className="posts">
-            <Routes>
-               <Route path="/profile" element={<Feed postData={props.state.postData} />} />
-            </Routes>
-         </div>
-      </div>
+         <Routes>
+            <Route path="/profile" element={<Feed postData={props.state.postData} />} />
+         </Routes>
+      </>
    );
 }
 

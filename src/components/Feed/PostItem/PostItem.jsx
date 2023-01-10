@@ -1,9 +1,9 @@
 import React from "react";
 import s from "./Post.module.css";
-import avatar from "../../img/avatar.jpg";
-import like from "../../img/like.svg";
+import avatar from "../../../img/avatar.jpg";
+import like from "../../../img/like.svg";
 
-const Post = (props) => {
+const PostItem = (props) => {
    return (
       <div className={s.post}>
          <div className={s.info}>
@@ -21,4 +21,4 @@ const Post = (props) => {
    );
 };
 
-export default Post;
+export default PostItem;

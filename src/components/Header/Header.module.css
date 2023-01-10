@@ -5,15 +5,10 @@
    border-radius: 20px;
    border: 1px solid rgba(225, 225, 225, 0.18);
    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-   margin: 10px auto 0 auto;
-   width: 1200px;
-   display: flex;
-   align-items: center;
-   height: 100px;
+   grid-column: span 2;
+   padding: 10px;
 }
 
 .logo {
-   margin-left: 50px;
-   height: 65px;
+   height: 70px;
 }

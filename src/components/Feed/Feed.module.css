@@ -1,4 +1,5 @@
 .feed {
+   margin: 0 auto;
    display: flex;
    justify-content: start;
    flex-direction: row-reverse;

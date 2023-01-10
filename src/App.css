@@ -1,19 +1,14 @@
 .app-wrapper {
-   margin: 10px auto;
+   margin: 15px auto;
    width: 1200px;
    display: grid;
-   grid-template-rows: repeat(2, auto);
+   grid-template-rows: repeat(3, auto);
    grid-template-columns: 2fr 8fr;
+
    grid-gap: 15px;
 }
 
-.posts {
+/* .posts {
+   margin: 0 auto;
    width: 1200px;
-   margin: 10px auto;
-   display: flex;
-   flex-wrap: wrap;
-}
-
-.main-wrapper {
-   min-height: 100vh;
-}
+} */

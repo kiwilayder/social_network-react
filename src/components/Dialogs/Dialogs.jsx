@@ -1,25 +1,21 @@
 import React from "react";
 import s from "./Dialogs.module.css";
-import Message_item from "./Message_item/Message_item";
-import Dialog_item from "./Dialog_item/Dialog_item";
-import { sendMessageActionCreator, updateMessageActionCreator } from "../../Redux/DialogsDataReducer";
+import MessageItem from "./MessageItem/MessageItem";
+import DialogItem from "./DialogItem/DialogItem";
 
 const Dialogs = (props) => {
-   // let addNewMessage = React.createRef();
-
    let addMessage = () => {
-      props.dispatch(sendMessageActionCreator());
+      props.addMessage();
    };
 
    let newTextMessage = (e) => {
       let textMessage = e.target.value;
-      props.dispatch(updateMessageActionCreator(textMessage));
+      props.newTextMessage(textMessage);
    };
+   // let addNewMessage = React.createRef();
 
-   let messages = props.dialogsData.messages.map((m) => <Message_item message={m.message} />);
-   let dialogs = props.dialogsData.users.map((d) => (
-      <Dialog_item name={d.name} id={d.id} avatar={d.avatar} />
-   ));
+   let messages = props.dialogsData.messages.map((m) => <MessageItem message={m.message} />);
+   let dialogs = props.dialogsData.users.map((d) => <DialogItem name={d.name} id={d.id} avatar={d.avatar} />);
 
    return (
       <div className={s.wrapper}>
@@ -30,7 +26,7 @@ const Dialogs = (props) => {
                <textarea
                   placeholder="Enter your message..."
                   onChange={newTextMessage}
-                  value={props.dialogsData.newMessage}
+                  value={props.newMessage}
                   className={s.messages__areaMessage}
                />
                <button onClick={addMessage} className={s.messages__send}>

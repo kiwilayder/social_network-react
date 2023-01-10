@@ -1,17 +1,16 @@
 import React from "react";
 import s from "./NewPost.module.css";
-import { updateTextActionCreator, addPostActionCreator } from "../../Redux/PostDataReducer";
 
 const NewPost = (props) => {
    // let addNewPost = React.createRef();
 
    let addPost = () => {
-      props.dispatch(addPostActionCreator());
+      props.addPost();
    };
 
    let newTextPost = (e) => {
       let text = e.target.value;
-      props.dispatch(updateTextActionCreator(text));
+      props.onChangeText(text);
    };
 
    return (

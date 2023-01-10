@@ -11,7 +11,7 @@ let renderTree = (state) => {
    root.render(
       <React.StrictMode>
          <BrowserRouter>
-            <App state={state} dispatch={store.dispatch.bind(store)} />
+            <App state={state} store={store} />
          </BrowserRouter>
       </React.StrictMode>
    );
